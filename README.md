@@ -4,8 +4,8 @@ CSCI 3954802 (Practical web development): Assignment 4
 
 <b>Group Members:</b>
 
-Tahmina Munni - TahminaM </br>
-Ramon Torres - Mightywise </br>
+* Tahmina Munni - TahminaM </br>
+* Ramon Torres - Mightywise </br>
 
 [Link to the Website]
 
