@@ -8,5 +8,5 @@ This repository contains a React application example on how to implement client-
 Tahmina Munni - TahminaM </br>
 Ramon Torres - Mightywise </br>
 
-[Link to the Website](https://tahminam.github.io/Bank_of_React/)
+[Link to the Website]
 
