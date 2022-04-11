@@ -13,8 +13,8 @@ Creating a basic bank app using React Router.
 - Ramon Torres - Mightywise
 
 ### `npm start`
-- First, run this command to install dependencies: npm install react-router-dom@5.3.0 react-router@5.2.1
-- Next, run this command to start the React application: npm start
+- First, run this command to install dependencies: ```npm install react-router-dom@5.3.0 react-router@5.2.1```
+- Next, run this command to start the React application: ```npm start```
 
 [Link to the Website]
 
