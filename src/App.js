@@ -3,6 +3,8 @@
 import './App.css';
 import Clock from './components/Clock';
 import logo from './logo.png';
+import Content from './components/Content';
+import Greeting from './components/Greeting';
 
 function App() {
   	return (

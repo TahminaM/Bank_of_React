@@ -16,3 +16,28 @@ p {
   height: 193px;
 }
 
+
+.App {
+  text-align: center;
+}
+
+button {
+  margin: 40px;
+}
+
+p {
+  margin: 10px;
+  text-align: left;
+}
+
+.logo {
+  width: 392px;
+  height: 193px;
+}
+
+.card {
+  margin: 20px 0;
+  background-color: transparent;
+}
+
+
