@@ -1,5 +1,5 @@
 # Bank_of_React
-CSCI 3954802 (Practical web development): Assignment 4
+CSCI 3954802 (Practical web development): Assignment 4 </br>
 Creating a basic bank app using React Router.
 
 ## Goals
