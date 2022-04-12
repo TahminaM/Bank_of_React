@@ -41,7 +41,7 @@ if (page === 'Customize') {
             <div className="container">
                 <button className='btn btn-primary' onClick={showDebits}>Debits</button>
 
-                <!-- credit line goes here-->
+                /* credit line goes here */
 
 
                 <button className='btn btn-primary' onClick={showCustomizeProfile}>Customize</button>
@@ -60,7 +60,8 @@ if (page === 'Customize') {
         <div>
             <button className='btn btn-primary' onClick={showDebits}>Debits</button>
 
-            <!-- credit line goes here-->
+            /* credit line goes here */
+            
             
             <button className='btn btn-primary' onClick={showCustomizeProfile}>Customize</button>
             {page}
