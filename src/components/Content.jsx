@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Debits from './Debits';
-//Import credit
+import Credits from './Credits';
 
 
 const Content = () => {
@@ -10,7 +10,9 @@ const Content = () => {
         setPage(<Debits />);
     }
 
-    //const showCredits
+    const showCredits = () => {
+        setPage(<Credits />);
+    }
 
 
     const showCustomizeProfile = () => {
@@ -41,8 +43,7 @@ if (page === 'Customize') {
             <div className="container">
                 <button className='btn btn-primary' onClick={showDebits}>Debits</button>
 
-                <!-- credit line goes here-->
-
+                <button className='btn btn-primary' onClick={showCredits}>Credits</button>
 
                 <button className='btn btn-primary' onClick={showCustomizeProfile}>Customize</button>
                 <h1>Customize</h1>
@@ -60,7 +61,7 @@ if (page === 'Customize') {
         <div>
             <button className='btn btn-primary' onClick={showDebits}>Debits</button>
 
-            <!-- credit line goes here-->
+            <button className='btn btn-primary' onClick={showCredits}>Credits</button>
             
             <button className='btn btn-primary' onClick={showCustomizeProfile}>Customize</button>
             {page}
