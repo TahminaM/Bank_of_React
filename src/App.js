@@ -23,7 +23,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-
+        
         const getCredits = async () => {
             const response = await fetch("https://moj-api.herokuapp.com/credits");
             const credits = await response.json();
@@ -55,7 +55,39 @@ class App extends Component {
 
     }
 
+    //componentDidUpdate = (prevProps, prevState) => {
+    //    // Typical usage (don't forget to compare props):
+    //    if (this.state.credits !== prevState.credits) {
+    //        this.setState({
+    //            accountBalance:
+    //                this.state.accountBalance + this.state.credits[this.state.credits.length - 1].amount
+    //        });
+    //    }
+    //    //console.log(prevState);
+    //}
 
+    addCredit = (e) => {
+        e.preventDefault();
+
+        let newEntry = new Object();
+        let today = new Date();
+
+        newEntry.id = String((Math.round(Math.random() * 10000000) * 10) / 10);
+        newEntry.description = e.target.description.value;
+        newEntry.amount = Number(e.target.amount.value);
+        newEntry.date =
+            Date().slice(11, 15) + '-' + (today.getMonth() + 1) + '-' + Date().slice(8, 10);
+
+        let newArray = this.state.credits;
+        newArray.push(newEntry);
+
+        this.setState({ credits: newArray, accountBalance: this.state.accountBalance + newEntry.amount });
+
+    }
+
+    addDebit = () => {
+
+    }
 
     // Update state's currentUser (userName) after "Log In" button is clicked
     mockLogIn = (logInInfo) => {
@@ -71,8 +103,8 @@ class App extends Component {
             <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince} />
         );
         const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />);  // Pass props to "LogIn" component
-        const CreditsComponent = () => (<Credits accountBalance={this.state.accountBalance} credits={this.state.credits} />);
-        const DebitsComponent = () => (<Debits accountBalance={this.state.accountBalance} debits={this.state.debits} />);
+        const CreditsComponent = () => (<Credits accountBalance={this.state.accountBalance} addCredit={this.addCredit} credits={this.state.credits} />);
+        const DebitsComponent = () => (<Debits accountBalance={this.state.accountBalance} addDebit={this.addDebit} debits={this.state.debits} />);
 
         return (
             <Router>

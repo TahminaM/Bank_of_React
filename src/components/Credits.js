@@ -1,5 +1,7 @@
 // src/components/Credits.js
 
+import { Link } from 'react-router-dom';
+
 const Credits = (props) => {
     let creditsView = () => {
         const { credits } = props;
@@ -18,6 +20,7 @@ const Credits = (props) => {
                 <input type="number" name="amount" />
                 <button type="submit">Add Credit</button>
             </form>
+            <Link to='/'>Back to Home Page</Link>
         </div>
     )
 }
