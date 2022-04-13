@@ -22,54 +22,10 @@ class App extends Component {
         }
     }
 
-    componentDidMount() {
-        
-        const getCredits = async () => {
-            const response = await fetch("https://moj-api.herokuapp.com/credits");
-            const credits = await response.json();
-            this.setState({ credits: credits });
-
-            let addBalance = credits.map((credit) => {
-                this.setState({ accountBalance: this.state.accountBalance + credit.amount });
-            });
-
-            return addBalance;
-
-        }
-
-        const getDebits = async () => {
-            const response = await fetch("https://moj-api.herokuapp.com/debits");
-            const debits = await response.json();
-            this.setState({ debits: debits });
-
-            let subBalance = debits.map((debit) => {
-                this.setState({ accountBalance: this.state.accountBalance - debit.amount });
-            });
-
-            return subBalance;
-
-        }
-
-        getCredits();
-        getDebits();
-
-    }
-
-    //componentDidUpdate = (prevProps, prevState) => {
-    //    // Typical usage (don't forget to compare props):
-    //    if (this.state.credits !== prevState.credits) {
-    //        this.setState({
-    //            accountBalance:
-    //                this.state.accountBalance + this.state.credits[this.state.credits.length - 1].amount
-    //        });
-    //    }
-    //    //console.log(prevState);
-    //}
-
     addCredit = (e) => {
         e.preventDefault();
 
-        let newEntry = new Object();
+        let newEntry = { };
         let today = new Date();
 
         newEntry.id = String((Math.round(Math.random() * 10000000) * 10) / 10);
@@ -88,7 +44,7 @@ class App extends Component {
     addDebit = (e) => {
         e.preventDefault();
 
-        let newEntry = new Object();
+        let newEntry = { };
         let today = new Date();
 
         newEntry.id = String((Math.round(Math.random() * 10000000) * 10) / 10);
@@ -133,6 +89,40 @@ class App extends Component {
             </Router>
         );
     }
+
+    componentDidMount() {
+
+        const getCredits = async () => {
+            const response = await fetch("https://moj-api.herokuapp.com/credits");
+            const credits = await response.json();
+            this.setState({ credits: credits });
+
+            let addBalance = credits.map((credit) => {
+                return this.setState({ accountBalance: this.state.accountBalance + credit.amount });
+            });
+
+            return addBalance;
+
+        }
+
+        const getDebits = async () => {
+            const response = await fetch("https://moj-api.herokuapp.com/debits");
+            const debits = await response.json();
+            this.setState({ debits: debits });
+
+            let subBalance = debits.map((debit) => {
+                return this.setState({ accountBalance: this.state.accountBalance - debit.amount });
+            });
+
+            return subBalance;
+
+        }
+
+        getCredits();
+        getDebits();
+
+    }
+
 }
 
 export default App;

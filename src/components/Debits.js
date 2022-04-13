@@ -14,6 +14,7 @@ const Debits = (props) => {
     return (
         <div>
             <h1>Debits</h1>
+            <h2>Account Balance: ${Math.round(props.accountBalance * 100) / 100}</h2>
             {debitsView()}
             <form onSubmit={props.addDebit}>
                 <input type="text" name="description" />
