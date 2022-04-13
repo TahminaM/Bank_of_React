@@ -85,7 +85,22 @@ class App extends Component {
 
     }
 
-    addDebit = () => {
+    addDebit = (e) => {
+        e.preventDefault();
+
+        let newEntry = new Object();
+        let today = new Date();
+
+        newEntry.id = String((Math.round(Math.random() * 10000000) * 10) / 10);
+        newEntry.description = e.target.description.value;
+        newEntry.amount = Number(e.target.amount.value);
+        newEntry.date =
+            Date().slice(11, 15) + '-' + (today.getMonth() + 1) + '-' + Date().slice(8, 10);
+
+        let newArray = this.state.debits;
+        newArray.push(newEntry);
+
+        this.setState({ debits: newArray, accountBalance: this.state.accountBalance - newEntry.amount });
 
     }
 
