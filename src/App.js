@@ -31,13 +31,22 @@ class App extends Component {
         newEntry.id = String((Math.round(Math.random() * 10000000) * 10) / 10);
         newEntry.description = e.target.description.value;
         newEntry.amount = Number(e.target.amount.value);
-        newEntry.date =
-            Date().slice(11, 15) + '-' + (today.getMonth() + 1) + '-' + Date().slice(8, 10);
+
+        if (today.getMonth() < 9) {
+            newEntry.date =
+                Date().slice(11, 15) + '-' + '0' + (today.getMonth() + 1) + '-' + Date().slice(8, 10);
+        } else {
+            newEntry.date =
+                Date().slice(11, 15) + '-' + (today.getMonth() + 1) + '-' + Date().slice(8, 10);
+        }
 
         let newArray = this.state.credits;
         newArray.push(newEntry);
 
         this.setState({ credits: newArray, accountBalance: this.state.accountBalance + newEntry.amount });
+
+        e.target.description.value = '';
+        e.target.amount.value = '';
 
     }
 
@@ -50,13 +59,22 @@ class App extends Component {
         newEntry.id = String((Math.round(Math.random() * 10000000) * 10) / 10);
         newEntry.description = e.target.description.value;
         newEntry.amount = Number(e.target.amount.value);
-        newEntry.date =
-            Date().slice(11, 15) + '-' + (today.getMonth() + 1) + '-' + Date().slice(8, 10);
+
+        if (today.getMonth() < 9) {
+            newEntry.date =
+                Date().slice(11, 15) + '-' + '0' + (today.getMonth() + 1) + '-' + Date().slice(8, 10);
+        } else {
+            newEntry.date =
+                Date().slice(11, 15) + '-' + (today.getMonth() + 1) + '-' + Date().slice(8, 10);
+        }
 
         let newArray = this.state.debits;
         newArray.push(newEntry);
 
         this.setState({ debits: newArray, accountBalance: this.state.accountBalance - newEntry.amount });
+
+        e.target.description.value = '';
+        e.target.amount.value = '';
 
     }
 
