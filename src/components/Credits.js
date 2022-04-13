@@ -17,8 +17,8 @@ const Credits = (props) => {
             <h2>Account Balance: ${Math.round(props.accountBalance * 100) / 100}</h2>
             {creditsView()}
             <form onSubmit={props.addCredit}>
-                <input type="text" name="description" />
-                <input type="number" name="amount" />
+                <input type="text" name="description" placeholder="Enter Description" />
+                <input type="number" name="amount" placeholder="Enter Credit Amount" />
                 <button type="submit">Add Credit</button>
             </form>
             <Link to='/'>Back to Home Page</Link>
