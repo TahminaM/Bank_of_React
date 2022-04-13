@@ -28,24 +28,31 @@ class App extends Component {
             const response = await fetch("https://moj-api.herokuapp.com/credits");
             const credits = await response.json();
             this.setState({ credits: credits });
+
+            let addBalance = credits.map((credit) => {
+                this.setState({ accountBalance: this.state.accountBalance + credit.amount });
+            });
+
+            return addBalance;
+
         }
 
         const getDebits = async () => {
             const response = await fetch("https://moj-api.herokuapp.com/debits");
             const debits = await response.json();
             this.setState({ debits: debits });
+
+            let subBalance = debits.map((debit) => {
+                this.setState({ accountBalance: this.state.accountBalance - debit.amount });
+            });
+
+            return subBalance;
+
         }
 
         getCredits();
         getDebits();
 
-        //let add = () => {
-        //    return this.state.credits.map((credit) => {
-        //        this.setState({ accountBalance: this.state.accountBalance + credit.amount });
-        //    });
-        //};
-
-        //add();
     }
 
 

@@ -8,7 +8,7 @@ const Credits = (props) => {
             return <li key={credit.id}>{credit.amount} {credit.description} {date}</li>
         })
     }
-    console.log(props);
+    
     return (
         <div>
             <h1>Credits</h1>
