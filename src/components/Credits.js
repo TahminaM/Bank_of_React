@@ -14,7 +14,7 @@ const Credits = (props) => {
     return (
         <div>
             <h1>Credits</h1>
-            <h2>Account Balance: ${Math.round(props.accountBalance * 100) / 100}</h2>
+            <h2>Account Balance: ${Math.round(props.accountBalance * 100) / 100}</h2>{/*Rounds to 2 decimal places*/}
             {creditsView()}
             <form onSubmit={props.addCredit}>
                 <input type="text" name="description" placeholder="Enter Description" />
