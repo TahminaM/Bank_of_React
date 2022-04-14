@@ -105,6 +105,7 @@ class App extends Component {
             <Router>
                 <div>
                     <Route exact path="/" render={HomeComponent} />
+                    <Route exact path="/Bank_of_React" render={HomeComponent} />
                     <Route exact path="/userProfile" render={UserProfileComponent} />
                     <Route exact path="/login" render={LogInComponent} />
                     <Route exact path="/credits" render={CreditsComponent} />
