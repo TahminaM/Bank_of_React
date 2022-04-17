@@ -1,8 +1,10 @@
 # Bank_of_React
 CSCI 3954802 (Practical web development): Assignment 4 </br>
-Creating a basic bank app using React Router.
 
-## Goals
+## Goal
+Create a basic bank app using React Router.
+
+## Objectives
 - Introduce client-side routing
 - Add client-side routing to our React apps using React Router
 - Set up React Router to enable common browser behavior
