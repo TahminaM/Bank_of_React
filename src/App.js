@@ -91,7 +91,7 @@ class App extends Component {
 
     // Create Routes and React elements to be rendered using React components
     render() {
-        const HomeComponent = () => (<Home accountBalance={this.state.accountBalance} />);
+        const HomeComponent = () => (<Home userName={this.state.currentUser.userName} accountBalance={this.state.accountBalance} />);
         const UserProfileComponent = () => (
             <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince} />
         );
