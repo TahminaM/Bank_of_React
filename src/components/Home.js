@@ -5,14 +5,17 @@ import React, {Component} from 'react';
 import AccountBalance from './AccountBalance';
 import { Link } from 'react-router-dom';
 import Clock from './Clock';
+import Greeting from './Greeting';
 
 class Home extends Component {
   render() {
     return (
-      <div>
-        <img src="https://picsum.photos/200/200" alt="bank"/>
+      <div>        
         <h1>Bank of React</h1>
+        <img src="https://picsum.photos/200/200" alt="bank"/>
+        <Greeting />
         <Clock />
+        <AccountBalance accountBalance={this.props.accountBalance}/>
         <Link to="/userProfile">User Profile</Link>
         <br/>
         <Link to="/login">Login</Link>
@@ -21,7 +24,6 @@ class Home extends Component {
         <br/>
         <Link to="/debits">Debits</Link>
         
-        <AccountBalance accountBalance={this.props.accountBalance}/>
       </div>
     );
   }
