@@ -1,21 +1,36 @@
 // src/components/Credits.js
 
 import { Link } from 'react-router-dom';
+import Card from './Card';
 
 const Credits = (props) => {
     let creditsView = () => {
         const { credits } = props;
         return credits.map((credit) => {
             let date = credit.date.slice(0, 10);
-            return <li key={credit.id}>{credit.amount} {credit.description} {date}</li>
-        })
+            return (
+                <div className='col-lg-3 col-md-2 col-sm-1'>
+                    <Card
+                        key={credit.id}
+                        description={credit.description}
+                        amount={credit.amount}
+                        date={date}
+                    />
+                </div>
+            )
+        });
     }
     
     return (
         <div>
             <h1>Credits</h1>
             <h2>Account Balance: ${Math.round(props.accountBalance * 100) / 100}</h2>{/*Rounds to 2 decimal places*/}
-            {creditsView()}
+            <div className='container'>
+                <div className='row justify-content-center'>
+                    {creditsView()}
+                </div>
+            </div>
+            <br/>
             <form onSubmit={props.addCredit}>
                 <input type="text" name="description" placeholder="Enter Description" />
                 <input type="float" name="amount" placeholder="Enter Credit Amount" />

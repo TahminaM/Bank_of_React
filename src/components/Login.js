@@ -1,8 +1,10 @@
 // src/components/Login.js
 // The LogIn component is used to demonstrate the use of Redirect.
 
-import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 class LogIn extends Component {
   constructor () {  // Create and initialize state
@@ -52,7 +54,8 @@ class LogIn extends Component {
             <input type="password" name="password" />
           </div>
           <button>Log In</button>
-        </form>                  
+        </form>   
+        <Link to='/'>Back to Home Page</Link>
       </div>
     )
   }
