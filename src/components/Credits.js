@@ -24,7 +24,7 @@ const Credits = (props) => {
     return (
         <div>
             <h1>Credits</h1>
-            <h2>Account Balance: ${Math.round(props.accountBalance * 100) / 100}</h2>{/*Rounds to 2 decimal places*/}
+            <h2>Current Account Balance: <b>${Math.round(props.accountBalance * 100) / 100}</b></h2>{/*Rounds to 2 decimal places*/}
             <div className='container'>
                 <div className='row justify-content-center'>
                     {creditsView()}
