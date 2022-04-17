@@ -6,8 +6,8 @@ const Card = (props) => {
             <div className="card-header">
                 {props.description}
             </div>
-            <p>{props.date}</p>
             <p>${props.amount}</p>
+            <p>{props.date}</p>
         </div>
     );
 }
