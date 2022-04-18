@@ -46,8 +46,8 @@ class LogIn extends Component {
           <Link to="/">Home</Link>
           <Link to="/userProfile">User Profile</Link>
           <Link to="/login">Login</Link>
-          <Link to="credits">Credits</Link>
-          <Link to="debits">Debits</Link>
+          <Link to="/credits">Credits</Link>
+          <Link to="/debits">Debits</Link>
         </div>
         <br/>
         <h1>Login</h1>
