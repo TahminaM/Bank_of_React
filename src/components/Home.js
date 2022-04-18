@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom';
 import Clock from './Clock';
 import Greeting from './Greeting';
 import Logo from '../logo.png';
+import { Redirect } from 'react-router-dom';
 
 class Home extends Component {
   render() {
     return (
       <div class="content">
+          <Redirect to="/" />
           <div class="navbar">
             <Link to="/">Home</Link>
             <Link to="/userProfile">User Profile</Link>
