@@ -29,9 +29,9 @@ const Debits = (props) => {
             <Link to="/login">Login</Link>
             <Link to="credits">Credits</Link>
             <Link to="debits">Debits</Link>
-          </div>
-        <div>
-        <br/>
+         </div>
+         <div>
+            <br/>
             <h1>Debits</h1>
             <h2>Current Account Balance: <b>${Math.round(props.accountBalance * 100) / 100}</b></h2>{/*Rounds to 2 decimal places*/}
             <div className='container'>
@@ -45,8 +45,8 @@ const Debits = (props) => {
                 <input type="float" name="amount" placeholder="Enter Debit Amount" />
                 <button type="submit">Add Debit</button>
             </form>
-        </div>
-    </div>   
+         </div>
+        </div>   
     );
 }
 

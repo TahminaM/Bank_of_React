@@ -23,31 +23,30 @@ const Credits = (props) => {
     
     return (
         <div class="content">
-        <div class="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/userProfile">User Profile</Link>
-            <Link to="/login">Login</Link>
-            <Link to="credits">Credits</Link>
-            <Link to="debits">Debits</Link>
-        </div>
-        <div>
-        <br/>
-            <h1>Credits</h1>
-            <h2>Current Account Balance: <b>${Math.round(props.accountBalance * 100) / 100}</b></h2>{/*Rounds to 2 decimal places*/}
-            <div className='container'>
-                <div className='row justify-content-center'>
-                    {creditsView()}
-                </div>
+            <div class="navbar">
+                <Link to="/">Home</Link>
+                <Link to="/userProfile">User Profile</Link>
+                <Link to="/login">Login</Link>
+                <Link to="credits">Credits</Link>
+                <Link to="debits">Debits</Link>
             </div>
-            <br/>
-            <form onSubmit={props.addCredit}>
-                <input type="text" name="description" placeholder="Enter Description" />
-                <input type="float" name="amount" placeholder="Enter Credit Amount" />
-                <button type="submit">Add Credit</button>
-            </form>
+            <div>
+                <br/>
+                <h1>Credits</h1>
+                <h2>Current Account Balance: <b>${Math.round(props.accountBalance * 100) / 100}</b></h2>{/*Rounds to 2 decimal places*/}
+                <div className='container'>
+                    <div className='row justify-content-center'>
+                        {creditsView()}
+                    </div>
+                </div>
+                <br/>
+                <form onSubmit={props.addCredit}>
+                    <input type="text" name="description" placeholder="Enter Description" />
+                    <input type="float" name="amount" placeholder="Enter Credit Amount" />
+                    <button type="submit">Add Credit</button>
+                </form>
+            </div>
         </div>
-    </div>
-    
     );
 }
 
