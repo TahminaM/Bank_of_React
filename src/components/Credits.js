@@ -22,7 +22,16 @@ const Credits = (props) => {
     }
     
     return (
+        <div class="content">
+        <div class="navbar">
+            <Link to="/">Home</Link>
+            <Link to="/userProfile">User Profile</Link>
+            <Link to="/login">Login</Link>
+            <Link to="credits">Credits</Link>
+            <Link to="debits">Debits</Link>
+        </div>
         <div>
+        <br/>
             <h1>Credits</h1>
             <h2>Current Account Balance: <b>${Math.round(props.accountBalance * 100) / 100}</b></h2>{/*Rounds to 2 decimal places*/}
             <div className='container'>
@@ -36,9 +45,10 @@ const Credits = (props) => {
                 <input type="float" name="amount" placeholder="Enter Credit Amount" />
                 <button type="submit">Add Credit</button>
             </form>
-            <Link to='/'>Back to Home Page</Link>
         </div>
-    )
+    </div>
+    
+    );
 }
 
 export default Credits;

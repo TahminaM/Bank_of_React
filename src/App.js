@@ -86,6 +86,7 @@ class App extends Component {
     mockLogIn = (logInInfo) => {
         const newUser = { ...this.state.currentUser }
         newUser.userName = logInInfo.userName
+        newUser.memberSince = logInInfo.memberSince
         this.setState({ currentUser: newUser })
     }
 
@@ -145,14 +146,10 @@ class App extends Component {
             });
 
             return subBalance;
-
         }
-
         getCredits();
         getDebits();        // Call the functions in order to populate the credits and debits arrays
-
     }
-
 }
 
 export default App;

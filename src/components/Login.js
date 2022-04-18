@@ -41,9 +41,17 @@ class LogIn extends Component {
     }
     // Render the login form
     return (
-      <div>
+      <div class="content">
+        <div class="navbar">
+          <Link to="/">Home</Link>
+          <Link to="/userProfile">User Profile</Link>
+          <Link to="/login">Login</Link>
+          <Link to="credits">Credits</Link>
+          <Link to="debits">Debits</Link>
+        </div>
+        <br/>
         <h1>Login</h1>
-
+        <div class="box">
         <form onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="userName">User Name</label>
@@ -54,9 +62,9 @@ class LogIn extends Component {
             <input type="password" name="password" />
           </div>
           <button>Log In</button>
-        </form>   
-        <Link to='/'>Back to Home Page</Link>
+        </form>  
       </div>
+    </div>  
     )
   }
 }

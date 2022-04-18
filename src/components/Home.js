@@ -11,21 +11,23 @@ import Logo from '../logo.png';
 class Home extends Component {
   render() {
     return (
+      <div class="content">
+      <div class="navbar">
+        <Link to="/">Home</Link>
+        <Link to="/userProfile">User Profile</Link>
+        <Link to="/login">Login</Link>
+        <Link to="credits">Credits</Link>
+        <Link to="debits">Debits</Link>
+      </div>
       <div>
         <br/>
-        <img src={Logo} width="400px" height="200px" alt="Bank Logo" className='logo' />
+        <br/>
+        <img src={Logo} width="490px" height="280px" alt="Bank Logo" className='logo' />
         <Greeting userName={this.props.userName}/>
         <Clock />
-        <AccountBalance accountBalance={this.props.accountBalance}/>
-        <Link to="/userProfile">User Profile</Link>
-        <br/>
-        <Link to="/login">Login</Link>
-        <br/>
-        <Link to="/credits">Credits</Link>
-        <br/>
-        <Link to="/debits">Debits</Link>
-        
+        <AccountBalance accountBalance={this.props.accountBalance}/>        
       </div>
+    </div>  
     );
   }
 }

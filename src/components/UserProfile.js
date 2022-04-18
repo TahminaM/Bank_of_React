@@ -6,14 +6,21 @@ import {Link} from 'react-router-dom';
 class UserProfile extends Component {
     render() {
       return (
-          <div>
-            <h1>User Profile</h1>
-  
+        <div class="content">
+          <div class="navbar">
+            <Link to="/">Home</Link>
+            <Link to="/userProfile">User Profile</Link>
+            <Link to="/login">Login</Link>
+            <Link to="credits">Credits</Link>
+            <Link to="debits">Debits</Link>
+          </div>
+          <br/>            
+          <h1>User Profile</h1>
+          <div class="box">  
             <div>Username: {this.props.userName}</div>
             <div>Member Since: {this.props.memberSince}</div>
-            
-            <Link to="/">Return to Home</Link>
           </div>
+        </div>    
       );
     }
   }
