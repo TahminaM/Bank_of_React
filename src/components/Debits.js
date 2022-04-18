@@ -22,7 +22,16 @@ const Debits = (props) => {
     }
 
     return (
+        <div class="content">
+         <div class="navbar">
+            <Link to="/">Home</Link>
+            <Link to="/userProfile">User Profile</Link>
+            <Link to="/login">Login</Link>
+            <Link to="credits">Credits</Link>
+            <Link to="debits">Debits</Link>
+          </div>
         <div>
+        <br/>
             <h1>Debits</h1>
             <h2>Current Account Balance: <b>${Math.round(props.accountBalance * 100) / 100}</b></h2>{/*Rounds to 2 decimal places*/}
             <div className='container'>
@@ -36,9 +45,9 @@ const Debits = (props) => {
                 <input type="float" name="amount" placeholder="Enter Debit Amount" />
                 <button type="submit">Add Debit</button>
             </form>
-            <Link to='/'>Back to Home Page</Link>
         </div>
-    )
+    </div>   
+    );
 }
 
 export default Debits;
